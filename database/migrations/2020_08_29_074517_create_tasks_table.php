@@ -16,6 +16,7 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
            // $table->id();
             $table->uuid('task_id');
+            $table->uuid('team_id');
             $table->string('title');
             $table->string('description');
             $table->uuid('assignee_id');

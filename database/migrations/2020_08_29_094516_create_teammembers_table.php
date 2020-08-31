@@ -17,6 +17,7 @@ class CreateTeammembersTable extends Migration
             //$table->id();
             $table->uuid('team_id');
             $table->string('member_name');
+            $table->string('member_id');
             $table->string('member_email');
           //  $table->uuid('assignee_id');
            // $table->string('status');

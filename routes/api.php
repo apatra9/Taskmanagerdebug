@@ -14,9 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::post('teams/{id}/tasks', 'PersonController@testpersons');
-Route::get('tasks/{task?}', 'TaskController@show');
-Route::post('task','TaskController@func1');
-Route::post('team','TeamController@store');
-Route::get('teams/{team?}', 'TeamController@show');
-//Route::apiResource('/team','TeamController');
+Route::get('tasks/{id}', 'TaskController@show');
+Route::get('tasks/{id}/members/{member}', 'TaskController@showmembertasks');
+Route::get('tasks','TaskController@showalive');
+Route::post('tasks/{id}','TaskController@func1');
+Route::patch('tasks/{id}', 'TaskController@patchitup');
+
+
+
+Route::get('teams/{id?}', 'TeamController@show');
+Route::post('teams','TeamController@store');
+Route::post('teams/{id}/member', 'TeammembersController@func1');
+
+

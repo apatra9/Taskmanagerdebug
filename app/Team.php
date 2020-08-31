@@ -11,6 +11,13 @@ class Team extends Model
     //
   //  protected $table = 'teams';
     protected $primaryKey ='team_id';
+    protected $casts = [
+      'team_id' => 'string'
+    ];
+    public $incrementing = false;
+    
+
+  
 
     protected $fillable=['team_id','team_name'];
 

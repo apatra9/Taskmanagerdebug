@@ -21,7 +21,7 @@ class TeamController extends Controller
 
         //$table->id();
             
-        $table->team_id= Uuid::generate();
+        $table->team_id= Uuid::generate()->string;
         $table->team_name=$request->name;
            
 
@@ -39,16 +39,18 @@ class TeamController extends Controller
 
 
 
-        public function show($team)    :TeamResource
+        public function show($id)    :TeamResource
         {
             
             
 
 
            $user= new Team();
-           $user = DB::table('teams')->where('team_name', $team)->first();
+           $user = DB::table('teams')->where('team_id', $id)->get();
 
           return new TeamResource($user);
 
         }
+
+          
 }
